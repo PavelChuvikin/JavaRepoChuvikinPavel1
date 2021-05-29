@@ -1,11 +1,11 @@
 public class Box <T, U, V, X> {
-    private T nameOfFruit;
+    private T typeOfFruit;
     private U numberOfFruit;
     private V weightOfFruit;
     private X numberOfBox;
 
-    public void setNameOfFruit(T nameOfFruit) {
-        this.nameOfFruit = nameOfFruit;
+    public void setTypeOfFruit(T typeOfFruit) {
+        this.typeOfFruit = typeOfFruit;
     }
     public void setNumberOfFruit(U numberOfFruit) {
         this.numberOfFruit = numberOfFruit;
@@ -21,7 +21,7 @@ public class Box <T, U, V, X> {
     }
 
     public T getNameOfFruit() {
-        return nameOfFruit;
+        return typeOfFruit;
     }
     public U getNumberOfFruit() {
         return numberOfFruit;
@@ -30,16 +30,19 @@ public class Box <T, U, V, X> {
         return weightOfFruit;
     }
 
-    Box(T nameOfFruit, U numberOfFruit, V weightOfFruit, X numberOfBox){
-        this.nameOfFruit = nameOfFruit;
+    Box(T typeOfFruit, U numberOfFruit, V weightOfFruit, X numberOfBox){
+        this.typeOfFruit = typeOfFruit;
         this.numberOfFruit = numberOfFruit;
         this.weightOfFruit = weightOfFruit;
         this.numberOfBox = numberOfBox;
     }
 //метод сравнения веса коробок
-    public boolean compare(Box compareBox){
-        return ((int)compareBox.getNumberOfFruit()*(double)compareBox.getWeightOfFruit() == ((int)this.numberOfFruit*(double)this.weightOfFruit));
+
+
+    public double compare(Box compareBox) {
+        return ((int)this.numberOfFruit*(double)this.weightOfFruit) - (int)compareBox.getNumberOfFruit()*(double)compareBox.getWeightOfFruit();
 
     }
+
 
 }
